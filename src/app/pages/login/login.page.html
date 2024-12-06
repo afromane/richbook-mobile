@@ -1,0 +1,56 @@
+
+
+<ion-content [fullscreen]="true">
+ 
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-input
+          formControlName="email"
+          fill="outline"
+          type="email"
+          label="Email"
+          labelPlacement="floating"
+          helperText="Enter a valid email"
+          errorText="Invalid email"
+          email
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          formControlName="password"
+          fill="outline"
+          type="password"
+          label="Password"
+          labelPlacement="floating"
+          helperText="Enter your password"
+          errorText="Invalid email"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-button
+        shape="round"
+        fill="outline"
+        size="small"
+        expand="block"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        <strong>Log in</strong>
+      </ion-button>
+      <p class="ion-text-center" (click)="gotoRegister()">
+        <a >Or new user? Create an account</a>
+      </p>
+      
+    </ion-grid>
+  </form>
+  <ion-toast
+    [isOpen]="isToastOpen"
+    message="Login successful!"
+    [duration]="5000"
+    (didDismiss)="setOpen(false)"
+    color="success"
+  ></ion-toast>
+</ion-content>

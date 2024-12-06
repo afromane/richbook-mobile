@@ -1,0 +1,107 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-input
+          formControlName="firstName"
+          fill="outline"
+          type="text"
+          label="FirstName"
+          labelPlacement="floating"
+          helperText="Enter your FirstName"
+        ></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input
+          formControlName="lastName"
+          fill="outline"
+          type="text"
+          label="LastName"
+          labelPlacement="floating"
+          helperText="Enter your LastName"
+        ></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input
+          formControlName="email"
+          fill="outline"
+          type="email"
+          label="Email"
+          labelPlacement="floating"
+          helperText="Enter a valid email"
+          errorText="Invalid email"
+          email
+        ></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-radio-group formControlName="gender">
+          <ion-item>
+            <ion-label>Male</ion-label>
+            <ion-radio slot="start" value="male"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Female</ion-label>
+            <ion-radio slot="start" value="female"></ion-radio>
+          </ion-item>
+          
+        </ion-radio-group>
+      </ion-item>
+      <br>
+      
+      <ion-item>
+        <ion-input
+          formControlName="password"
+          fill="outline"
+          type="password"
+          label="Password"
+          labelPlacement="floating"
+          helperText="Enter your password"
+        ></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input
+          formControlName="passwordConfirmation"
+          fill="outline"
+          type="password"
+          label="Password Confirmation"
+          labelPlacement="floating"
+          helperText="Enter your password"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-button
+        shape="round"
+        fill="outline"
+        size="small"
+        expand="block"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        <strong>Register</strong>
+      </ion-button>
+      <p class="ion-text-center" (click)="gotoLogin()">
+        <a >Or have a account? Login</a>
+      </p>
+      
+    </ion-grid>
+  </form>
+  
+</ion-content>

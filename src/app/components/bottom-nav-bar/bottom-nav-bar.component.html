@@ -1,0 +1,8 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button *ngFor="let item of tabItems" [tab]="item.title.toLowerCase()" [routerLink]="item.url"  routerLinkActive="selected">
+      <ion-icon [name]="item.icon"></ion-icon>
+      <ion-label>{{ item.title }}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
