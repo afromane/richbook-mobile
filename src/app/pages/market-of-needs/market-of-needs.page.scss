@@ -1,0 +1,23 @@
+.status-icon-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;  
+  border-radius: 50%;  
+  padding: 10px;  
+  width: 8px;  
+  height: 8px;  
+}
+
+.status-icon-container.pending {
+  background-color: yellow;  
+}
+
+.status-icon-container.inProgress {
+  background-color: green;  
+}
+
+.status-icon-container.delayed {
+  background-color: red;  
+}
+

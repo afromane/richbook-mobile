@@ -28,10 +28,38 @@ const routes: Routes = [
         path: 'exchange',
         loadComponent: () => import('./exchange/exchange.page').then( m => m.ExchangePage)
       },
+      
       {
-        path: 'chat',
-        loadComponent: () => import('./chat/chat.page').then( m => m.ChatPage)
+        path: 'exchange',
+        children :[
+          {
+            path: 'chat/:id',
+            loadComponent: () => import('./chat/chat.page').then( m => m.ChatPage)
+          },
+          {
+            path: 'needs',
+            loadComponent: () => import('./exchange-of-needs/exchange-of-needs.page').then( m => m.ExchangeOfNeedsPage)
+          },
+          {
+            path: 'potentials',
+            loadComponent: () => import('./exchange-of-potentials/exchange-of-potentials.page').then( m => m.ExchangeOfPotentialsPage)
+          },
+        ]
       },
+      {
+        path: 'market',
+        children :[
+          {
+            path: 'needs',
+            loadComponent: () => import('./market-of-needs/market-of-needs.page').then( m => m.MarketOfNeedsPage)
+          },
+          {
+            path: 'potentials',
+            loadComponent: () => import('./market-of-potentials/market-of-potentials.page').then( m => m.MarketOfPotentialsPage)
+          },
+        ]
+      },
+
     ]
   },
   

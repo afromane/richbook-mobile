@@ -11,18 +11,27 @@
     </ion-toolbar>
   </ion-header>
   <ion-list lines="none">
-    <ion-item
+     <ion-item
       *ngFor="let message of messages"
       [class.message-sent]="message.sender === currentUser"
       [class.message-received]="message.sender !== currentUser"
     >
       <ion-label slot="{{ message.sender === currentUser ? 'end' : 'start' }}">
         <div class="message-bubble">
-          {{ message.content }}
+          {{ message.contenu }}
         </div>
       </ion-label>
-    </ion-item>
+    </ion-item> 
+    
   </ion-list>
-  
 
+  <ion-item lines="none" class="input-with-icon">
+    <ion-input
+      fill="outline"
+      type="text"
+      [(ngModel)]="message"
+      aria-placeholder="Your message"
+    ></ion-input>
+    <ion-icon name="send-outline" slot="end" (click)="sendMessage()"></ion-icon>
+  </ion-item>
 </ion-content>

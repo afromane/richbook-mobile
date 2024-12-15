@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -45,7 +46,7 @@ export class LoginPage implements OnInit {
   form!: FormGroup;
   isToastOpen = false;
 
-  constructor(private router: Router,private databaseService: DatabaseService) {}
+  constructor(private router: Router,private databaseService: DatabaseService,private authService:AuthService) {}
 
   ngOnInit() {
     this.onForm();

@@ -21,6 +21,22 @@ export const routes: Routes = [
     path: 'chat',
     loadComponent: () => import('./pages/chat/chat.page').then( m => m.ChatPage)
   },
+  {
+    path: 'exchange-of-needs',
+    loadComponent: () => import('./pages/exchange-of-needs/exchange-of-needs.page').then( m => m.ExchangeOfNeedsPage)
+  },
+  {
+    path: 'exchange-of-potentials',
+    loadComponent: () => import('./pages/exchange-of-potentials/exchange-of-potentials.page').then( m => m.ExchangeOfPotentialsPage)
+  },
+  {
+    path: 'market-of-needs',
+    loadComponent: () => import('./pages/market-of-needs/market-of-needs.page').then( m => m.MarketOfNeedsPage)
+  },
+  {
+    path: 'market-of-potentials',
+    loadComponent: () => import('./pages/market-of-potentials/market-of-potentials.page').then( m => m.MarketOfPotentialsPage)
+  },
   
   
 ];

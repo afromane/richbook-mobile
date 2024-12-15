@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonLabel,IonNote,IonList,IonIcon,IonItem,
-  IonText
- } from '@ionic/angular/standalone';
+ IonText} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronForward, listCircle } from 'ionicons/icons';
 import { RouterLink } from '@angular/router';
